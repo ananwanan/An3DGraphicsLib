@@ -17,10 +17,11 @@ namespace anan3d
     public:
         matrix4();
         virtual ~matrix4();
-        //copy constructor
+        // copy constructor
         matrix4(const matrix4& matrix) noexcept;
-        //move constructor
+        // move constructor
         matrix4(const matrix4&& matrix) noexcept;
+
     public:
         /**
          * @brief the matrix4 data, 4x4 matrix
@@ -28,8 +29,8 @@ namespace anan3d
         std::array<std::array<double, 4>, 4> m{};
 
     public:
-        matrix4 operator =(const matrix4& matrix);
-        matrix4 operator =(const matrix4&& matrix) noexcept;
+        matrix4& operator=(const matrix4& matrix);
+        matrix4& operator=(matrix4&& matrix) noexcept;
 
     public:
         /**
@@ -45,11 +46,11 @@ namespace anan3d
         void setTranslation(double x, double y, double z);
         void setRotation(double angle);
         void setScale(double x, double y, double z);
+
     public:
         /**
          * @brief debug the matrix4, only in debug mode
          */
-        void debug();
-
+        void debug() const;
     };
-}
+}  // namespace anan3d
