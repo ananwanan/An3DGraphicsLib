@@ -1,0 +1,51 @@
+# Build directories
+/build/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+
+# User-specific files
+*.user
+*.user.*
+*.suo
+*.vcxproj.user
+*.ncb
+*.sdf
+*.opendb
+
+# IDE/editor files
+.vscode/
+.idea/
+*.code-workspace
+
+# Generated object and binary files
+*.obj
+*.o
+*.lo
+*.la
+*.al
+*.libs
+*.dll
+*.exe
+*.out
+*.app
+*.dSYM/
+*.so
+*.dylib
+*.lib
+
+# Backup and temporary files
+*~
+*.swp
+*.tmp
+*.temp
+*.bak
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
