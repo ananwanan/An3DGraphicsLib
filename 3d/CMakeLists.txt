@@ -3,7 +3,7 @@
 set(CMAKE_CXX_STANDARD 17)
 
 add_library(anan3d SHARED
-    src/common.cpp
+    src/an_common.cpp
     src/type_common.cpp
     src/matrix4.cpp
     src/matrix4_tool.cpp

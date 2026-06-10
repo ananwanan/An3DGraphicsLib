@@ -1,9 +1,9 @@
-#pragma once
+﻿#pragma once
 
 #include <array>
 #include <vector>
 
-#include "type_common.h"
+#include <type_common.h>
 
 namespace anan3d
 {

@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "common.h"
+#include <an_common.h>
 
 namespace anan3d
 {
@@ -21,13 +21,19 @@ namespace anan3d
     vector3& operator=(const vector3&) = default;
 
   public:
-    // the unit vectors of the X axes
+    /**
+     * the unit vectors of the X axes
+     */
     static const vector3 AXIS_X;
 
-    // the unit vectors of the Y axes
+    /**
+     * the unit vectors of the Y axes
+     */
     static const vector3 AXIS_Y;
 
-    // the unit vectors of the Z axes
+    /**
+     * the unit vectors of the Z axes
+     */
     static const vector3 AXIS_Z;
 
   public:
