@@ -12,7 +12,7 @@ namespace anan3d
     /**
      * @brief the matrix4 class, 4x4 matrix, used for transformation in 3D space
      */
-    ANAN3D_MY_DLL_H class matrix4
+    class AN3D_API matrix4
     {
     public:
         matrix4();
@@ -42,9 +42,25 @@ namespace anan3d
     public:
         /**
          * @brief set the translation component of the matrix
+         * 
+         * @param x the translation in x direction
+         * @param y the translation in y direction
+         * @param z the translation in z direction
          */
         void setTranslation(double x, double y, double z);
+        /**
+         * @brief Set the Rotation object
+         * 
+         * @param angle the rotation angle in degrees, only rotate around z axis
+         */
         void setRotation(double angle);
+        /**
+         * @brief set the scale component of the matrix
+         * 
+         * @param x the scale in x direction
+         * @param y the scale in y direction
+         * @param z the scale in z direction
+         */
         void setScale(double x, double y, double z);
 
     public:

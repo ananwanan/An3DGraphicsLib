@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../matrix4.h"
+#include <matrix4.h>
 
 namespace anan3d
 {

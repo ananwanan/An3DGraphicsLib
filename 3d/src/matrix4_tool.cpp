@@ -15,4 +15,12 @@ namespace anan3d
         result.m[3][3] = 1.0;
         return result;
     }
-}
+
+    void matrix4::setTranslation(double x, double y, double z)
+    {
+        m[0][0] = x;
+        m[1][1] = y;
+        m[2][2] = z;
+    }
+    
+}  // namespace anan3d

@@ -1,17 +1,20 @@
-﻿cmake_minimum_required(VERSION 3.10.0)
+﻿cmake_minimum_required(VERSION 3.10)
 
-project(An3DGraphicsLib VERSION 0.1.0 LANGUAGES C CXX)
+project(An3DGraphicsLib VERSION 0.1.0 LANGUAGES CXX)
 
-include_directories(3d/)
+add_subdirectory(3d)
 
-add_library(3d STATIC
-        3d/src/matrix4.cpp
-        3d/src/type_common.cpp
-        3d/src/matrix4_tool.cpp
-        3d/src/vector3.cpp)
+add_executable(An3DGraphicsLib
+    main.cpp
+)
 
-add_executable(An3DGraphicsLib main.cpp)
+set_target_properties(An3DGraphicsLib PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+)
 
-target_compile_definitions(3d PRIVATE AN3DGRAPHICSLIB_EXPORTS _DEBUG)
-
-target_link_libraries(An3DGraphicsLib PRIVATE 3d)
+target_link_libraries(An3DGraphicsLib
+    PRIVATE
+        anan3d
+)
