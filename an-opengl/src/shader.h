@@ -2,15 +2,25 @@
 // Created by coder on 2026/6/12.
 //
 
-#ifndef AN3DGRAPHICSLIB_SHADER_H
-#define AN3DGRAPHICSLIB_SHADER_H
+#pragma once
 
+#include <string>
+#include <glm/glm.hpp>
 
+namespace anan3d
+{
+    class Shader
+    {
+    public:
+        unsigned int ID;
 
-class shader {
+        Shader(const char* vertexPath, const char* fragmentPath);
 
-};
+        void use();
 
-
-
-#endif //AN3DGRAPHICSLIB_SHADER_H
+        void setBool(const std::string& name, bool value);
+        void setInt(const std::string& name, int value);
+        void setFloat(const std::string& name, float value);
+        void setVec3(const std::string& name, const glm::vec3& value);
+    };
+}

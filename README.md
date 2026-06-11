@@ -32,6 +32,15 @@ An3DGraphicsLib is a small C++ 3D math library focused on core transformation pr
 - CMake 3.10 or later
 - A C++ compiler with C++11 support or newer
 
+```
+
+  GLFW (system or vcpkg)
+  Linux:
+  sudo apt install libglfw3-dev
+  Or vcpkg:
+  vcpkg install glfw3
+```
+
 ### Build from source
 
 ```bash
