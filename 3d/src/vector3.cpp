@@ -2,14 +2,15 @@
 // Created by anan on 2026/6/9.
 //
 
-#include <an_common.h>
+#include <stdexcept>
+#include <vector3.h>
 
 namespace anan3d
 {
-  const vector3 AXIS_X = vector3(1, 0, 0);
-  const vector3 AXIS_Y = vector3(0, 1, 0);
-  const vector3 AXIS_Z = vector3(0, 0, 1);
+  const auto AXIS_X = vector3{ 1, 0, 0 };
+  const auto AXIS_Y = vector3{ 0, 1, 0 };
+  const auto AXIS_Z = vector3{ 0, 0, 1 };
 
-  vector3::vector3(double x, double y, double z) : vec{ x, y, z } { }
+  vector3::vector3(const double x, const double y, const double z) : x(x), y(y), z(z) { }
 
 }  // namespace anan3d

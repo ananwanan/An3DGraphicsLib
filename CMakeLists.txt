@@ -3,6 +3,7 @@
 project(An3DGraphicsLib VERSION 0.1.0 LANGUAGES CXX)
 
 add_subdirectory(3d)
+add_subdirectory(an-opengl)
 
 add_executable(An3DGraphicsLib
     main.cpp

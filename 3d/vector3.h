@@ -15,7 +15,7 @@ namespace anan3d
   class AN3D_API vector3
   {
   public:
-    vector3(double x = 0.0, double y = 0.0, double z = 0.0);
+    explicit vector3(double x = 0.0, double y = 0.0, double z = 0.0);
     virtual ~vector3()                 = default;
     vector3(const vector3&)            = default;
     vector3& operator=(const vector3&) = default;
@@ -37,6 +37,8 @@ namespace anan3d
     static const vector3 AXIS_Z;
 
   public:
-    std::array<double, 3> vec{};
+    double x{};
+    double y{};
+    double z{};
   };
 }  // namespace anan3d

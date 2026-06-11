@@ -5,8 +5,8 @@ using namespace anan3d;
 
 int main(int, char**)
 {
-    matrix4 m;
-    m.debug();
+  const matrix4 matrix = matrix4::identity();
+  matrix.debug();
 
-    return 0;
+  return 0;
 }
