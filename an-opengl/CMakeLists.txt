@@ -78,3 +78,10 @@ if (APPLE)
     find_library(OpenGL OpenGL REQUIRED)
     target_link_libraries(an_opengl PRIVATE ${COCOA} ${OpenGL})
 endif()
+
+add_custom_command(
+    TARGET an_opengl POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_CURRENT_SOURCE_DIR}/shaders
+            $<TARGET_FILE_DIR:an_opengl>/shaders
+)
