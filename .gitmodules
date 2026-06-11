@@ -1,0 +1,6 @@
+[submodule "an-opengl/external/glm"]
+	path = an-opengl/external/glm
+	url = https://github.com/g-truc/glm
+[submodule "an-opengl/external/glfw"]
+	path = an-opengl/external/glfw
+	url = https://github.com/glfw/glfw
