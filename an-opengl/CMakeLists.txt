@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
+
 project(an_opengl LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -33,28 +34,22 @@ add_subdirectory(external/glfw)
 # --------------------
 # Executable
 # --------------------
-add_executable(an_opengl
+add_library(an_opengl
         src/main.cpp
         src/shader.cpp
 )
 
-#
-#target_include_directories(an_opengl PRIVATE
-#        ${CMAKE_SOURCE_DIR}/src
-#)
-
 target_include_directories(
         an_opengl
         PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/external
         ${CMAKE_CURRENT_SOURCE_DIR}/external/glad
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/glfw
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/glfw/include
         ${CMAKE_CURRENT_SOURCE_DIR}/external/glm
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(an_opengl PRIVATE
+target_link_libraries(an_opengl PUBLIC
         glfw
         glad
         glm

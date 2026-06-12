@@ -21,7 +21,7 @@ set_target_properties(anan3d PROPERTIES
 target_include_directories(
     anan3d
     PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_compile_definitions(
