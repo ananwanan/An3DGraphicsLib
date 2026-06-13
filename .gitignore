@@ -54,6 +54,6 @@ Thumbs.db
 .DS_Store
 
 # Doxyfiles
-Doxyfile
+docs/
 html/
 latex/

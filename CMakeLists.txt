@@ -6,7 +6,7 @@ add_subdirectory(3d)
 add_subdirectory(an-opengl)
 
 add_executable(An3DGraphicsLib
-        main.cpp
+        src/main.cpp
 )
 
 set_target_properties(An3DGraphicsLib PROPERTIES
