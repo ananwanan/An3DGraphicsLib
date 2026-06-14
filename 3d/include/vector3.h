@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <an_common.h>
+#include <type_common.h>
 
 namespace anan3d
 {
@@ -35,6 +35,31 @@ namespace anan3d
      * the unit vectors of the Z axes
      */
     static const vector3 AXIS_Z;
+
+  public:
+    friend bool operator==(const vector3& lhs, const vector3& rhs);
+    friend bool operator!=(const vector3& lhs, const vector3& rhs);
+
+  public:
+    /**
+     * @brief get the zero vector, which is a vector with all components equal to zero, and is used as the additive identity in vector operations
+     * @return the zero vector, which is (0, 0, 0)
+     */
+    static vector3 identity();
+
+  public:
+    /**
+     * @brief calculate the length of the vector, which is the distance from the origin to the point represented by the vector, and is calculated by the
+     * formula: length = sqrt(x^2 + y^2 + z^2)
+     * @return the length of the vector, which is a non-negative value
+     */
+    inline double length() const;
+    /**
+     * @brief normalize the vector, which is the process of converting a vector to a unit vector, which has a length of 1, and is calculated by dividing each
+     * component of the vector by its length
+     * @return the normalized vector
+     */
+    vector3 normalized() const;
 
   public:
     double x{};

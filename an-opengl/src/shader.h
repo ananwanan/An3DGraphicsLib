@@ -16,7 +16,7 @@ namespace anan3d
 
         Shader(const char* vertexPath, const char* fragmentPath);
 
-        void use();
+        void use() const;
 
         void setBool(const std::string& name, bool value);
         void setInt(const std::string& name, int value);

@@ -20,8 +20,6 @@ namespace anan3d
         vStream << vFile.rdbuf();
         fStream << fFile.rdbuf();
 
-        std::cout << vStream.str() << std::endl;
-
         std::string vCode = vStream.str();
         std::string fCode = fStream.str();
 
@@ -47,7 +45,7 @@ namespace anan3d
         glDeleteShader(fragment);
     }
 
-    void Shader::use()
+    void Shader::use() const
     {
         glUseProgram(ID);
     }

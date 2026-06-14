@@ -1,16 +1,16 @@
 ﻿project(anan3d)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(anan3d SHARED
-    src/an_common.cpp
     src/type_common.cpp
     src/matrix4.cpp
     src/matrix4_tool.cpp
     src/vector3.cpp
     src/vector3_tool.cpp
     src/point3.cpp
-)
+    src/an_math.cpp)
 
 set_target_properties(anan3d PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin

@@ -5,7 +5,7 @@ namespace anan3d
   matrix4 matrix4::identity()
   {
     matrix4 result;
-    //index=row×4+col
+    // index = row * 4 + col
     result.m_data[0]  = 1.0;
     result.m_data[5]  = 1.0;
     result.m_data[10] = 1.0;
@@ -15,9 +15,6 @@ namespace anan3d
 
   void matrix4::setTranslation(double x, double y, double z)
   {
-    (*this)[0][0] = x;
-    (*this)[1][1] = y;
-    (*this)[2][2] = z;
   }
 
 }  // namespace anan3d

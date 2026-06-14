@@ -2,6 +2,9 @@
 
 project(An3DGraphicsLib VERSION 0.1.0 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_subdirectory(3d)
 add_subdirectory(an-opengl)
 
