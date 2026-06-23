@@ -67,15 +67,12 @@ int _main()
 
 int main()
 {
-  matrix4 m1, m2, m3;
-  {
-    {
-      m1 = matrix4::rotate(anan3d::an_math::PI / 4);
-    }
-    m1.debug();
-    m2 = matrix4::identity();
-  }
+  // 旋转 90 度 (PI / 2)
+  double radians = 3.14159265358979323846 / 2.0;
 
-  m3 = m1 * m1;
-  // m3.debug();
+  matrix4 mat = matrix4::rotate(3.14159265 / 2.0, vector3(0, 0, 1));
+  std::cout << "--- Rotation Matrix (90 deg around Z) ---" << std::endl;
+  mat.debug();
+
+  return 0;
 }

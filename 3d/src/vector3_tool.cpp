@@ -15,8 +15,8 @@ namespace anan3d
 
   vector3 vector3::normalized() const
   {
-    vector3 result = vector3::identity();
-    double  length = result.length();
+    vector3      result = identity();
+    const double length = this->length();
     if (length > std::numeric_limits<double>::epsilon())
     {
       result.x = this->x / length;
