@@ -11,7 +11,7 @@
 
 #include <matrix4.h>
 
-using namespace anan3d;
+USE_NP
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) { glViewport(0, 0, width, height); }
 
@@ -70,9 +70,13 @@ int main()
   // 旋转 90 度 (PI / 2)
   double radians = 3.14159265358979323846 / 2.0;
 
-  matrix4 mat = matrix4::rotate(3.14159265 / 2.0, vector3(0, 0, 1));
-  std::cout << "--- Rotation Matrix (90 deg around Z) ---" << std::endl;
-  mat.debug();
-
+  vector3* vec = new vector3();
+  if (vec == nullptr)
+  {
+    std::cout << "Failed to create vector3\n";
+    return -1;
+  }
+  vec->debug();
+  delete vec;
   return 0;
 }

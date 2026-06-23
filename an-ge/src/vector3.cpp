@@ -5,14 +5,14 @@
 #include <stdexcept>
 #include <vector3.h>
 
-namespace anan3d
-{
-  const vector3 vector3::AXIS_X = vector3{ 1, 0, 0 };
-  const vector3 vector3::AXIS_Y = vector3{ 0, 1, 0 };
-  const vector3 vector3::AXIS_Z = vector3{ 0, 0, 1 };
+NP_BEGIN
 
-  vector3::vector3(const double x, const double y, const double z) : x(x), y(y), z(z) { }
+const vector3 vector3::AXIS_X = vector3{ 1, 0, 0 };
+const vector3 vector3::AXIS_Y = vector3{ 0, 1, 0 };
+const vector3 vector3::AXIS_Z = vector3{ 0, 0, 1 };
 
-  vector3 vector3::identity() { return vector3{ 0, 0, 0 }; }
+vector3::vector3(double x, double y, double z) : x(x), y(y), z(z) { }
 
-}  // namespace anan3d
+vector3 vector3::identity() { return vector3{ 0, 0, 0 }; }
+
+NP_END

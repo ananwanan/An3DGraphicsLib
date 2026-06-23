@@ -4,7 +4,6 @@
 
 #include <point3.h>
 
-namespace anan3d
-{
+NP_BEGIN
 
-}  // namespace anan3d
+NP_END
