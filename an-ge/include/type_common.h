@@ -2,6 +2,7 @@
 // Created by coder on 2026/6/8.
 //
 #pragma once
+#include <vector>
 
 // ================================
 // AN3D Symbol Visibility
@@ -80,6 +81,9 @@
 #include <string>
 
 using String = std::string;
+
+using radians = double;
+using angle   = double;
 
 #ifndef NP_BEGIN
 #define NP_BEGIN  \

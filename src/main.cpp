@@ -4,8 +4,11 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include <iostream>
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
+#include <glm/gtx/vector_angle.hpp>
+
+#include <iostream>
 
 #include <shader.h>
 
@@ -63,20 +66,49 @@ int _main()
   }
 
   glfwTerminate();
+
+  return 0;
+}
+
+void test_with_gl()
+{
+  glm::vec3 pos1(12.12f, 26.0f, 3.34f);
+  glm::vec3 pos2(11.34f, 12.0f, 3.34f);
+
+  glm::vec3 result = glm::cross(pos1, pos2);
+  std::cout << result.x << " " << result.y << " " << result.z << std::endl;
+
+  double dot = glm::dot(pos1, pos2);
+  std::cout << dot << " " << dot << " " << dot << std::endl;
+
+  pos1           = glm::normalize(pos1);
+  pos2           = glm::normalize(pos2);
+  double radians = glm::angle(pos1, pos2);
+  std::cout << "radians:" << radians << std::endl;
+}
+
+void test_with_ge()
+{
+  vector3 pos1(12.12f, 26.0f, 3.34f);
+  vector3 pos2(11.34f, 12.0f, 3.34f);
+
+  vector3 result = pos1.crossProduct(pos2);
+  result.debug();
+
+  double dot = pos1.dotProduct(pos2);
+  std::cout << dot << " " << dot << " " << dot << std::endl;
+
+  double radians = pos1.getAngle(pos2);
+  std::cout << "radians:" << radians << std::endl;
 }
 
 int main()
 {
   // 旋转 90 度 (PI / 2)
-  double radians = 3.14159265358979323846 / 2.0;
+  const double radians = 3.14159265358979323846 / 2.0;
+  test_with_gl();
+  std::cout << "--------- test_with_gl end ---------" << std::endl;
+  test_with_ge();
 
-  vector3* vec = new vector3();
-  if (vec == nullptr)
-  {
-    std::cout << "Failed to create vector3\n";
-    return -1;
-  }
-  vec->debug();
-  delete vec;
   return 0;
 }

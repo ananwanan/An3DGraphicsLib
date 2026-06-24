@@ -2,7 +2,6 @@
 // Created by anan on 2026/6/9.
 //
 
-#include <stdexcept>
 #include <vector3.h>
 
 NP_BEGIN
@@ -14,5 +13,33 @@ const vector3 vector3::AXIS_Z = vector3{ 0, 0, 1 };
 vector3::vector3(double x, double y, double z) : x(x), y(y), z(z) { }
 
 vector3 vector3::identity() { return vector3{ 0, 0, 0 }; }
+
+vector3& vector3::operator+=(const vector3& other)
+{
+  this->x += other.x;
+  this->y += other.y;
+  this->z += other.z;
+  return *this;
+}
+
+vector3& vector3::operator-=(const vector3& other)
+{
+  this->x -= other.x;
+  this->y -= other.y;
+  this->z -= other.z;
+  return *this;
+}
+
+[[nodiscard]] vector3 operator+(vector3 lhs, const vector3& rhs)
+{
+  lhs += rhs;
+  return lhs;
+}
+
+[[nodiscard]] vector3 operator-(vector3 lhs, const vector3& rhs)
+{
+  lhs -= rhs;
+  return lhs;
+}
 
 NP_END
