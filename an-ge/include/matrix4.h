@@ -7,11 +7,12 @@
 #include <array>
 #include <type_common.h>
 #include <vector3.h>
-#include <an_math.h>
 
 USE_NP
 
 NP_BEGIN
+
+class vector3;
 
 /**
  * @brief the matrix4 class, 4x4 matrix, used for transformation in 3D space
@@ -80,7 +81,7 @@ public:
    * performed in the right-hand rule, which means that if the axis is pointing towards you, the rotation is counter-clockwise, and if the axis is pointing
    * away from you, the rotation is clockwise
    */
-  static matrix4 rotate(double radians, const vector3& axis = vector3::AXIS_Z);
+  static matrix4 build_rotate(double radians, const vector3& axis = vector3::AXIS_Z);
   /**
    * @brief get the translation matrix, which is used to translate a vector by a certain amount in x, y and z directions, and the translation is performed in
    * the right-hand rule
@@ -91,25 +92,18 @@ public:
    * translation is performed in the right-hand rule, which means that if the axis is pointing towards you, the translation is counter-clockwise, and if the
    * axis is pointing away from you, the translation is clockwise
    */
-  static matrix4 translate(double x, double y, double z);
-
-public:
+  static matrix4 build_translation(double x, double y, double z);
   /**
-   * @brief set the translation component of the matrix
-   *
-   * @param x the translation in x direction
-   * @param y the translation in y direction
-   * @param z the translation in z direction
-   */
-  void setTranslation(double x, double y, double z);
-  /**
-   * @brief set the scale component of the matrix
-   *
+   * @brief get the scale matrix, which is used to scale a vector by a certain amount in x, y and z directions, and the scale is performed in the right-hand
+   * rule
    * @param x the scale in x direction
    * @param y the scale in y direction
    * @param z the scale in z direction
+   * @return the scale matrix, which is a 4x4 matrix, and the scale is performed around the origin, which is the point (0, 0, 0), and the scale is performed
+   * in the right-hand rule, which means that if the axis is pointing towards you, the scale is counter-clockwise, and if the axis is pointing away from you,
+   * the scale is clockwise
    */
-  void setScale(double x, double y, double z);
+  static matrix4 build_scale(double x, double y, double z);
 
 public:
   /**

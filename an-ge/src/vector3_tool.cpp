@@ -2,6 +2,8 @@
 // Created by anan on 2026/6/9.
 //
 
+#include "matrix4.h"
+
 #include <cmath>
 #include <format>
 #include <limits>
@@ -15,9 +17,8 @@ double vector3::length() const { return std::sqrt(x * x + y * y + z * z); }
 
 vector3 vector3::normalized() const
 {
-  vector3      result = identity();
-  const double length = this->length();
-  if (length > std::numeric_limits<double>::epsilon())
+  vector3 result = identity();
+  if (const double length = this->length(); length > std::numeric_limits<double>::epsilon())
   {
     result.x = this->x / length;
     result.y = this->y / length;
@@ -25,6 +26,17 @@ vector3 vector3::normalized() const
   }
   return result;
 }
+
+vector3 vector3::translation(double x, double y, double z) const
+{
+  matrix4 mat = matrix4::build_translation(x, y, z);
+  
+  return *this;
+}
+
+vector3 vector3::rotate(double radians, const vector3& axis) const { return vector3(); }
+
+vector3 vector3::scale(double x, double y, double z) const { return vector3(); }
 
 double vector3::dotProduct(const vector3& other) const { return this->x * other.x + this->y * other.y + this->z * other.z; }
 

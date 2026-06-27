@@ -7,6 +7,9 @@
 #include <iostream>
 #include <format>
 
+#include <an_math.h>
+#include <point3.h>
+
 USE_NP
 
 NP_BEGIN
@@ -96,7 +99,7 @@ bool operator==(const matrix4& lhs, const matrix4& rhs) { return lhs.m_data == r
 
 bool operator!=(const matrix4& lhs, const matrix4& rhs) { return !(lhs == rhs); }
 
-matrix4 matrix4::rotate(double radians, const vector3& axis /*= vector3::AXIS_Z*/)
+matrix4 matrix4::build_rotate(double radians, const vector3& axis /*= vector3::AXIS_Z*/)
 {
   const auto c = an_math::cos(radians);
   const auto s = an_math::sin(radians);
@@ -118,9 +121,18 @@ matrix4 matrix4::rotate(double radians, const vector3& axis /*= vector3::AXIS_Z*
   // clang-format on
 }
 
-matrix4 matrix4::translate(double x, double y, double z)
+matrix4 matrix4::build_translation(double x, double y, double z)
 {
-  matrix4 result = matrix4::identity();
+  matrix4 result = identity();
+  result(0, 3)   = x;
+  result(1, 3)   = y;
+  result(2, 3)   = z;
+  return result;
+}
+
+matrix4 matrix4::build_scale(double x, double y, double z)
+{
+  matrix4 result = identity();
   result(0, 3)   = x;
   result(1, 3)   = y;
   result(2, 3)   = z;

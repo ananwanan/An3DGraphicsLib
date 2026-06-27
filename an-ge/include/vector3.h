@@ -8,6 +8,7 @@
 
 NP_BEGIN
 
+
 /**
  * @brief the vector3 class, used for representing a 3D vector
  *
@@ -84,12 +85,44 @@ public:
    * @return the length of the vector, which is a non-negative value
    */
   [[nodiscard]] inline double length() const;
+
   /**
    * @brief normalize the vector, which is the process of converting a vector to a unit vector, which has a length of 1, and is calculated by dividing each
    * component of the vector by its length
    * @return the normalized vector
    */
   vector3 normalized() const;
+
+public:
+  /**
+   * @brief translate the vector by a certain amount in x, y and z directions, and the translation is performed in the right-hand rule
+   * @param x the translation in x direction
+   * @param y the translation in y direction
+   * @param z the translation in z direction
+   * @return the translated vector
+   */
+  vector3 translation(double x, double y, double z) const;
+  
+  /**
+   * @brief rotate the vector around an axis by a certain angle, and the angle is in radians, and the axis is a unit vector, and the default axis is the Z
+   * axis, which is the most common case in 2D rotation
+   * @param radians the angle in radians, which is the amount of rotation, and is a positive value for counter-clockwise rotation, and a negative value for
+   * clockwise rotation
+   * @param axis the axis of rotation, which is a unit vector, and the default axis is the Z axis, which is the most common case in 2D rotation, and the
+   * rotation is performed
+   * @return the rotated vector
+   */
+  vector3 rotate(double radians, const vector3& axis = AXIS_Z) const;
+
+  /**
+   * @brief scale the vector by a certain amount in x, y and z directions, and the scale is performed in the right-hand rule
+   *
+   * @param x scale in x direction
+   * @param y scale in y direction
+   * @param z scale in z direction
+   * @return vector3 the scaled vector
+   */
+  vector3 scale(double x, double y, double z) const;
 
 public:  // tools only for debug
   /**

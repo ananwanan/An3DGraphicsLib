@@ -13,6 +13,4 @@ matrix4 matrix4::identity()
   return result;
 }
 
-void matrix4::setTranslation(double x, double y, double z) { }
-
 NP_END
