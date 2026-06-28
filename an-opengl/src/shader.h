@@ -20,4 +20,7 @@ public:
   void setInt(const std::string& name, int value);
   void setFloat(const std::string& name, float value);
   void setVec3(const std::string& name, const glm::vec3& value);
+
+public:
+  void printOpenGLVersion();
 };

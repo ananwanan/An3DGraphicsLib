@@ -22,3 +22,14 @@ target_link_libraries(an3d
         PRIVATE
         an_ge an_opengl
 )
+
+# ==================================================
+# Copy shaders after build
+# ==================================================
+add_custom_target(copy_shaders
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/shaders
+        ${CMAKE_BINARY_DIR}/bin/shaders
+)
+
+add_dependencies(an3d copy_shaders)
